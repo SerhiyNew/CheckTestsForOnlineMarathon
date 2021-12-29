@@ -58,7 +58,7 @@ export default class Task2 extends Component {
             </>
           );
         })}
-        <div>{this.state.text}</div>
+        <div className='text'>{this.state.text}</div>
       </>
     );
   }
