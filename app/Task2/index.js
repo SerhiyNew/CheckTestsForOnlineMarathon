@@ -39,11 +39,11 @@ export default class Task2 extends Component {
           {this.state.list.map(item => {
             return (
               <div
-                onMouseEnter={() => {
+                onMouseOver={() => {
                   this.mouseHoverHandler(item.id, 'enter');
                   // console.log('enter');
                 }}
-                onMouseLeave={() => {
+                onMouseOut={() => {
                   this.mouseHoverHandler(item.id);
                   // console.log('leave');
                 }}
