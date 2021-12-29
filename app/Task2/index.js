@@ -47,12 +47,8 @@ export default class Task2 extends Component {
                 this.mouseHoverHandler(item.id);
               }}
             >
-              <div id={`block${item.id}`}>{item.id}</div>
-              <div
-                style={{ visibility: 'hidden' }}
-                id={`textBlock${item.id}`}
-                className='text'
-              >
+              <div className='text'>{item.id}</div>
+              <div style={{ visibility: 'hidden' }} id={`textBlock${item.id}`}>
                 {item.text}
               </div>
             </div>
