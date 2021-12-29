@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 
-import Task1 from "./Task1"
+import Task2 from "./Task2";
 
 export default class App extends Component {
     constructor(props) {
@@ -24,12 +24,11 @@ export default class App extends Component {
                 <div className="row">
                     <div className="col">
                         <button onClick={this.toggleList}>
-                            show list
+                            button 
                         </button>
                     </div>
                 </div>
-
-                {showList && <Task1/>}
+                <Task2/>
             </Fragment>
         );
     }

@@ -1,14 +1,13 @@
-# Lifecycle
+# SyntheticEvent
 
-## Task1
+## Task 
+Create component ./app/Task2/index.js. It should render blocks for each element in "list" field and one for "text" field.
+List-element block should contains list-element id.
+When you hover mouse on the list-element block, the list-element text should appear in text block
+When you move mouse from the list-element block, the list-element text should disappear from text block
+For correct test passing give list-element block class "element" and give text block class "text"
 
-Create component in ./app/Task1/index.js. It should send request to backend using `Fetch API` and then render "block#1" with result (Look at ./server/index.js! You can find
-some list to use in the task).
-Component should show "block#2" while waiting response.
-
-Examples "block#1" and "block#2" at /screenshots
-
-
+## Run this in terminal
 
 1. Install dependencies
 `yarn install`
@@ -16,5 +15,3 @@ Examples "block#1" and "block#2" at /screenshots
 2. Run webpack
 `yarn watch`
 
-3. Run server
-`yarn server`
