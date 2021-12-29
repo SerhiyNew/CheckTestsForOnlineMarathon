@@ -52,9 +52,7 @@ export default class Task2 extends Component {
                 <div
                   style={{ visibility: 'hidden' }}
                   id={`textBlock${item.id}`}
-                >
-                  {item.text}
-                </div>
+                ></div>
               </div>
             );
           })}
