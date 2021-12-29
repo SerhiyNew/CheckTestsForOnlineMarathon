@@ -23,40 +23,43 @@ export default class Task2 extends Component {
     };
   }
 
-  // mouseHoverHandler(id, action) {
-  //   let textBlock = document.getElementById(`textBlock${id}`);
-  //   if (action === 'enter') {
-  //     textBlock.style.visibility = 'visible';
-  //   } else {
-  //     textBlock.style.visibility = 'hidden';
-  //   }
-  // }
+  mouseHoverHandler(id, action) {
+    let textBlock = document.getElementById(`textBlock${id}`);
+    if (action === 'enter') {
+      textBlock.style.visibility = 'visible';
+    } else {
+      textBlock.style.visibility = 'hidden';
+    }
+  }
 
   render() {
     return (
       <>
-        {this.state.list.map(item => {
-          return (
-            <div
-              key={item.id}
-              className='element'
-              onMouseEnter={() => {
-                this.setState({
-                  text: this.state.list.filter(obj => obj.id === item.id)[0]
-                    .text,
-                });
-              }}
-              onMouseLeave={() => {
-                this.setState({
-                  text: '',
-                });
-              }}
-            >
-              <div>id - {item.id}</div>
-            </div>
-          );
-        })}
-        <div className='text'>{this.state.text}</div>
+        <div>
+          {this.state.list.map(item => {
+            return (
+              <div
+                key={item.id}
+                className='element'
+                onMouseEnter={() => {
+                  this.mouseHoverHandler(item.id, 'enter');
+                }}
+                onMouseLeave={() => {
+                  this.mouseHoverHandler(item.id);
+                }}
+              >
+                <div className='text'>id - {item.id}</div>
+                <div
+                  style={{ visibility: 'hidden' }}
+                  id={`textBlock${item.id}`}
+                >
+                  {item.text}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        <div>{this.state.text}</div>
       </>
     );
   }
