@@ -37,25 +37,23 @@ export default class Task2 extends Component {
       <>
         {this.state.list.map(item => {
           return (
-            <>
-              <div
-                key={item.id}
-                className='element'
-                onMouseEnter={() => {
-                  this.setState({
-                    text: this.state.list.filter(obj => obj.id === item.id)[0]
-                      .text,
-                  });
-                }}
-                onMouseLeave={() => {
-                  this.setState({
-                    text: '',
-                  });
-                }}
-              >
-                <div>{item.id}</div>
-              </div>
-            </>
+            <div
+              key={item.id}
+              className='element'
+              onMouseEnter={() => {
+                this.setState({
+                  text: this.state.list.filter(obj => obj.id === item.id)[0]
+                    .text,
+                });
+              }}
+              onMouseLeave={() => {
+                this.setState({
+                  text: '',
+                });
+              }}
+            >
+              <div>{item.id}</div>
+            </div>
           );
         })}
         <div className='text'>{this.state.text}</div>
