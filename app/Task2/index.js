@@ -52,7 +52,7 @@ export default class Task2 extends Component {
                 });
               }}
             >
-              <div>{item.id}</div>
+              <div>id - {item.id}</div>
             </div>
           );
         })}
