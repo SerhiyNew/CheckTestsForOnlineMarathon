@@ -29,9 +29,9 @@ export default class Task1 extends Component {
           this.state.list.map(item => {
             return (
               <div key={item.id}>
-                <div>id = {item.id}</div>
-                <div>name = {item.name}</div>
-                <div>note = {item.note}</div>
+                <div>id - {item.id}</div>
+                <div>name - {item.name}</div>
+                <div>note - {item.note}</div>
               </div>
             );
           })
