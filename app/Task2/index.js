@@ -48,7 +48,7 @@ export default class Task2 extends Component {
                   this.mouseHoverHandler(item.id);
                 }}
               >
-                <div className='text'>id - {item.id}</div>
+                <div>id - {item.id}</div>
                 <div
                   style={{ visibility: 'hidden' }}
                   id={`textBlock${item.id}`}
@@ -59,7 +59,7 @@ export default class Task2 extends Component {
             );
           })}
         </div>
-        <div>{this.state.text}</div>
+        <div className='text'>{this.state.text}</div>
       </>
     );
   }
