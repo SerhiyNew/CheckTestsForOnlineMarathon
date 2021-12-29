@@ -24,11 +24,11 @@ export default class Task2 extends Component {
   }
 
   mouseHoverHandler(id, action) {
-    let textBlock = document.getElementById(`textBlock${id}`);
     if (action === 'enter') {
-      textBlock.style.visibility = 'visible';
+      let newText = this.state.list.filter(el => el.id === id)[0].text;
+      this.setState({ ...this.state, text: newText });
     } else {
-      textBlock.style.visibility = 'hidden';
+      this.setState({ ...this.state, text: '' });
     }
   }
 
@@ -39,20 +39,18 @@ export default class Task2 extends Component {
           {this.state.list.map(item => {
             return (
               <div
-                key={item.id}
-                className='element'
                 onMouseEnter={() => {
                   this.mouseHoverHandler(item.id, 'enter');
+                  // console.log('enter');
                 }}
                 onMouseLeave={() => {
                   this.mouseHoverHandler(item.id);
+                  // console.log('leave');
                 }}
+                key={item.id}
+                className='element'
               >
-                <div>id - {item.id}</div>
-                <div
-                  style={{ visibility: 'hidden' }}
-                  id={`textBlock${item.id}`}
-                ></div>
+                id - {item.id}
               </div>
             );
           })}
